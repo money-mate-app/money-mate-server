@@ -1,7 +1,6 @@
-import { app } from "./connections";
+import "./connections";
 import "./middlewares";
 import "./routes";
 
-import { ApiResponse } from "./middlewares/response";
-
-app.use(ApiResponse);
+import { formatResponse } from "./middlewares/response";
+formatResponse();
