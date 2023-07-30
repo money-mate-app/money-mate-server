@@ -9,7 +9,7 @@
     "dev": "nodemon ./src/app.ts",
     "generate:migrations": "drizzle-kit generate:pg --config=drizzle.config.ts",
     "introspect": "drizzle-kit introspect:pg --config=drizzle.config.ts",
-    "migrate": "ts-node src/db/migrate.ts",
+    "migrate": "ts-node src/models/migrate.ts",
     "drizzle:studio": "drizzle-kit studio --port 5500 --verbose"
   },
   "keywords": [],
@@ -54,6 +54,7 @@
     "socket.io": "^4.7.1",
     "tsx": "^3.12.7",
     "winston": "^3.10.0",
+    "znv": "^0.3.2",
     "zod": "^3.21.4"
   }
 }

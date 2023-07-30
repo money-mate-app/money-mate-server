@@ -3,7 +3,7 @@ import { pgTable, uuid, varchar, json, text } from "drizzle-orm/pg-core";
 
 export const users = pgTable("users", {
   userId: uuid("user_id").defaultRandom().primaryKey(),
-  email: varchar("email").unique(),
+  email: varchar("email").notNull(),
   name: varchar("name").notNull(),
   profilePicture: text("profile_picture"),
   provider: json("provider").$type<{
@@ -13,4 +13,4 @@ export const users = pgTable("users", {
 });
 
 export type User = InferModel<typeof users, "select">;
-export type NewUser = InferModel<typeof users, "insert">
+export type NewUser = InferModel<typeof users, "insert">;

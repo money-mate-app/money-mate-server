@@ -1,21 +1,13 @@
 {
   "compilerOptions": {
     "module": "commonjs",
+    "forceConsistentCasingInFileNames": true,
     "esModuleInterop": true,
-    "target": "esnext",
-    "noImplicitAny": true,
+    "target": "es6",
     "moduleResolution": "node",
     "sourceMap": true,
-    "outDir": "./dist",
-    "baseUrl": "./",
-    "rootDir": "./src",
-    "paths": {
-      "*": ["node_modules/*", "*.ts"]
-    },
-    "typeRoots": ["custom_typings", "node_modules/@types"],
-    "resolveJsonModule": true,
-    "skipLibCheck": true,
+    "outDir": "dist",
     "strict": true
   },
-  "include": ["src/**/*", "*.ts"]
+  "lib": ["es2015"]
 }

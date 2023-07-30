@@ -1,16 +1,15 @@
 // import { neon, neonConfig } from "@neondatabase/serverless";
-import { Client } from "pg";
+import { Pool } from "pg";
 import { drizzle } from "drizzle-orm/node-postgres";
 import { DATABASE_URL } from "../constants";
 import logger from "../utils/logger";
 
-async function createDBConnection() {
+function createDBConnection() {
   try {
-    const client = new Client({
+    const pool = new Pool({
       connectionString: DATABASE_URL,
     });
-    await client.connect();
-    const db = drizzle(client);
+    const db = drizzle(pool);
     logger.info("🚀 [postgress]: connected");
     return db;
   } catch (error) {
