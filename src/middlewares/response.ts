@@ -1,7 +1,8 @@
+import { app } from "../connections";
 import { ErrorRequestHandler } from "express";
 import { ZodError } from "zod";
 
-const ApiResponse: ErrorRequestHandler = (err, req, res, next) => {
+const apiResponse: ErrorRequestHandler = (err, req, res, next) => {
   if (err.status) {
     res.status(err.status).json({
       success: false,
@@ -26,4 +27,6 @@ const ApiResponse: ErrorRequestHandler = (err, req, res, next) => {
   });
 };
 
-export { ApiResponse };
+export function formatResponse () {
+  return app.use(apiResponse)
+}

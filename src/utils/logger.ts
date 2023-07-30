@@ -1,5 +1,5 @@
 import { createLogger, transports, format } from "winston";
-import { __dev__ } from "../constants";
+import { __DEV__ } from "../constants";
 
 const symbolMap: any = {
   debug: "\u001b[32m\u221A",
@@ -25,13 +25,13 @@ function logData(info: any, next: any) {
 const options = {
   transports: [
     new transports.Console({
-      level: !__dev__ ? "info" : "debug",
+      level: !__DEV__ ? "info" : "debug",
       log: logData,
       format: format.combine(format.prettyPrint()),
     }),
     new transports.File({
       filename: "./src/logs/debug.log",
-      level: __dev__ ? "debug" : "error",
+      level: __DEV__ ? "debug" : "error",
       format: format.combine(format.prettyPrint()),
       maxsize: 10000000,
       maxFiles: 10,
