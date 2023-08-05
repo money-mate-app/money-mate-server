@@ -1,6 +1,5 @@
 import "./connections";
-import "./middlewares";
-import "./routes";
+import "./modules/routes";
 
 import { formatResponse } from "./middlewares/response";
 formatResponse();
