@@ -11,7 +11,7 @@
         "introspect": "drizzle-kit introspect:pg --config=drizzle.config.ts",
         "migrate": "ts-node src/models/migrate.ts",
         "drizzle:studio": "drizzle-kit studio --port 5500 --verbose",
-        "prettier": "prettier --write '**/*.{js,jsx,ts,tsx}'"
+        "prettier": "prettier --write '*.ts'"
     },
     "keywords": [],
     "author": "",
@@ -50,7 +50,7 @@
         "jsonwebtoken": "^9.0.1",
         "morgan": "^1.10.0",
         "node-cron": "^3.0.2",
-        "nodemailer": "^6.9.3",
+        "nodemailer": "^6.9.4",
         "pg": "^8.11.1",
         "socket.io": "^4.7.1",
         "tsx": "^3.12.7",
