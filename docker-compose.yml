@@ -26,9 +26,8 @@ services:
       PGADMIN_DEFAULT_PASSWORD: ${POSTGRES_PASSWORD}
     env_file:
       - .env
-    volumes:
-      - pgadmin-data:/var/lib/pgadmin
-
-volumes:
-  pgdata:
-  pgadmin-data:
+  redis:
+    image: redis
+    restart: always
+    ports:
+      - ${REDIS_PORT}:6379
