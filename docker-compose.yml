@@ -13,3 +13,20 @@ services:
       - .env
     ports:
       - ${POSTGRES_PORT}:5432
+  pgadmin4:
+    image: dpage/pgadmin4
+    container_name: pgadmin4_container
+    restart: always
+    ports:
+      - "8888:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${POSTGRES_PASSWORD}
+    env_file:
+      - .env
+  redis:
+    image: redis
+    container_name: money-mate-redis
+    restart: always
+    ports:
+      - ${REDIS_PORT}:6379
