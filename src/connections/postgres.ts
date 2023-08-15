@@ -10,10 +10,10 @@ function createDBConnection() {
       connectionString: DATABASE_URL,
     });
     const db = drizzle(pool);
-    logger.info("🚀 [postgress]: connected");
+    logger.info("🚀 [postgres]: connected");
     return db;
   } catch (error) {
-    logger.error("❌ [postgress]: failed to connect");
+    logger.error("❌ [postgres]: failed to connect");
     console.log(error);
   }
 }
